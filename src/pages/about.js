@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const AboutPage = () =>{
   return(
@@ -21,6 +22,6 @@ const AboutPage = () =>{
   )
 }
 
-export const Head = () => <title>关于页</title>
+export const Head = () => <Seo title="关于页" />
 
 export default AboutPage
