@@ -1,5 +1,5 @@
-import * as React from 'react'
-import Greeting from "../components/greeting"
+import * as React from "react";
+import Greeting from "../components/greeting";
 
 // Rendering the <Greeting> component
 const SayHello = () => {
@@ -9,7 +9,7 @@ const SayHello = () => {
       <Greeting name="Obinna" />
       <Greeting name="Generosa" />
     </div>
-  )
-}
+  );
+};
 
-export default SayHello
+export default SayHello;

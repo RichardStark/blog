@@ -1,20 +1,22 @@
-import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import * as React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
-  query{
-    site {
-      siteMetadata {
-        title
+    query {
+      site {
+        siteMetadata {
+          title
+        }
       }
     }
-  }
-  `)
+  `);
 
   return (
     <div className="m-auto max-w-lg font-sans">
-      <header className="text-5xl text-gray-600 font-bold m-12 mx-0">{data.site.siteMetadata.title}</header>
+      <header className="text-5xl text-gray-600 font-bold m-12 mx-0">
+        {data.site.siteMetadata.title}
+      </header>
       <nav>
         <ul className="flex pl-0">
           <li className="pr-8">
@@ -39,7 +41,7 @@ const Layout = ({ pageTitle, children }) => {
         {children}
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

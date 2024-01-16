@@ -1,9 +1,7 @@
-import * as React from 'react'
+import * as React from "react";
 
 const Greeting = (props) => {
-  return(
-    <p>Hi {props.name} !</p>
-  )
-}
+  return <p>Hi {props.name} !</p>;
+};
 
-export default Greeting
+export default Greeting;
