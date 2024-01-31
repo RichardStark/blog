@@ -1,19 +1,21 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import { StaticImage } from "gatsby-plugin-image";
+import Recent from "../components/recent";
+import Category from "../components/category";
+import Popular from "../components/popular";
 import Seo from "../components/seo";
 
 const IndexPage = () => {
   return (
-    <main>
-      <Layout pageTitle="首页">
-        <p className="mb-2">这是一个测试页。</p>
-        <StaticImage
-          alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
-          src="../images/fh_video.jpg"
-        />
-      </Layout>
-    </main>
+    <Layout>
+      <main className="relative z-10 pt-16 grid gap-24 grid-cols-[2fr_1fr]">
+        <Recent></Recent>
+        <div className="grid grid-rows gap-16">
+          <Category></Category>
+          <Popular></Popular>
+        </div>
+      </main>
+    </Layout>
   );
 };
 

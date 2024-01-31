@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply text-black pr-8 m-1 relative;
+  }
+
+  .main-title {
+    @apply text-violet-600 text-lg my-6;
+  }
+}
