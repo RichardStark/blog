@@ -1,37 +1,28 @@
 import * as React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import Seo from "./seo";
+import TitleLayout from "./titlelayout";
 
 const Category = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx(sort: { frontmatter: { date: DESC } }) {
-        nodes {
-          frontmatter {
-            date(formatString: "MMMM D, YYYY")
-            title
-            slug
-          }
-          id
-        }
-      }
-    }
-  `);
-  console.log(data)
-
+  const categories = [
+    "React",
+    "Animation",
+    "CSS",
+    "Career",
+    "Gatsby",
+    "Next.js",
+    "Performance",
+  ];
   return (
-    <div>
-      {data.allMdx.nodes.map((node) => (
-        <article key={node.id}>
-          <h2 className="text-violet-600  underline text-3xl my-4">
-            <Link to={`/blog/${node.frontmatter.slug}`}>
-              {node.frontmatter.title}
+    <TitleLayout title="TOP CATEGORIES">
+      <div className="pt-4">
+        {categories.map((category) => (
+            <Link className="relative inline-block text-sm text-gray-800 py-1 px-3 mr-2 mb-2" to={`/category/${category}`}>
+              <div className="absolute -z-10 w-full h-full bg-blue-200 rounded-lg inset-0 "></div>{category}
             </Link>
-          </h2>
-          <p>Posted: {node.frontmatter.date}</p>
-        </article>
-      ))}
-    </div>
+        ))}
+      </div>
+    </TitleLayout>
   );
 };
 
