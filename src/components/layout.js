@@ -1,119 +1,22 @@
 import * as React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import Menu from "./menu";
+import Footer from "../components/footer";
+
 
 const Layout = ({ pageTitle, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
-    <div className=" font-sans">
+    <div className=" font-sans ">
       <div className="h-96 relative bg-gradient-to-r from-blue-300 to-blue-500">
         <div className="min-h-9 min-w-9"></div>
-        <div className="flex mx-auto w-full max-w-screen-lg">
-          <header className="flex flex-1 h-16 items-center">
-            <Link className="mr-12 text-xl text-violet-800" to="/">
-              {data.site.siteMetadata.title}
-            </Link>
-            <nav className="flex">
-              <ul className="flex pl-0">
-                <li>
-                  <Link className="nav-link" to="/">
-                    Latest
-                    <svg
-                      width="37"
-                      height="8"
-                      viewBox="0 0 37 8"
-                      fill="none"
-                      className="absolute m-auto"
-                    >
-                      <path
-                        d="M1 5.39971C7.48565 -1.08593 6.44837 -0.12827 8.33643 6.47992C8.34809 6.52075 11.6019 2.72875 12.3422 2.33912C13.8991 1.5197 16.6594 2.96924 18.3734 2.96924C21.665 2.96924 23.1972 1.69759 26.745 2.78921C29.7551 3.71539 32.6954 3.7794 35.8368 3.7794"
-                        stroke="hsl(333deg, 100%, 45%)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="nav-link" to="/about">
-                    About
-                    <svg
-                      width="58"
-                      height="5"
-                      viewBox="0 0 58 5"
-                      fill="none"
-                      className="absolute"
-                    >
-                      <path
-                        d="M1 3.18471C4.34436 3.18471 7.48008 1 10.8705 1C13.2525 1 15.1058 1.72336 17.3165 2.34614C20.3083 3.18891 22.9386 4.09106 26.1351 3.62607C28.8438 3.23203 31.8901 3.01248 34.5396 3.59297C35.6272 3.83127 36.5433 3.92663 37.55 3.29505C38.1957 2.88991 39.4841 3.07684 39.6651 3.87985C39.809 4.51858 43.0217 2.41818 43.6827 2.09236C44.6745 1.60342 45.105 1.98753 46.0216 2.48958C47.7503 3.43649 49.2982 3.62537 51.259 3.19575C51.6076 3.11937 52.011 3.20318 52.3669 3.18471C52.8876 3.1577 53.3662 2.78749 53.8777 2.78749C54.9479 2.78749 55.8858 2.39027 57 2.39027"
-                        stroke="hsl(333deg, 100%, 45%)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="nav-link" to="/blog">
-                    Goodies
-                    <svg
-                      width="83"
-                      height="7"
-                      viewBox="0 0 83 7"
-                      fill="none"
-                      className="absolute"
-                    >
-                      <path
-                        d="M1.36658 3.43961C5.25984 2.21819 9.10198 2.35113 13.042 1.74498C16.5973 1.19801 20.2829 1.33594 23.9226 1.33594C27.3725 1.33594 30.9056 1.5463 34.2891 1.5463C35.5441 1.5463 37.2693 2.05276 38.3912 2.55139C39.6341 3.10379 41.4642 3.25919 42.8089 3.4513C44.602 3.70745 46.3029 3.86034 48.1616 3.86034C49.0606 3.86034 49.9761 3.43961 50.9081 3.43961C51.4475 3.43961 52.841 3.17686 53.3273 2.97213C55.1318 2.21235 56.3597 3.3818 57.5346 4.49145C58.2657 5.18187 59.2379 3.46932 60.0123 3.18249C60.9779 2.82484 61.679 2.53519 62.4783 3.33443C62.7994 3.65557 63.8588 5.51258 64.3716 5.22773C65.485 4.60917 66.7235 4.15447 67.7258 3.33443C69.0587 2.24383 71.3278 2.48068 73 2.38777C74.4626 2.30652 75.525 2.05998 77 2.38777C77.7415 2.55256 78.7556 2.38777 79.518 2.38777C80.2804 2.38777 81.1728 1.74498 82 1.74498"
-                        stroke="hsl(333deg, 100%, 45%)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="nav-link" to="/blog">
-                    Courses
-                    <svg
-                      width="58"
-                      height="5"
-                      viewBox="0 0 58 5"
-                      fill="none"
-                      className="absolute"
-                    >
-                      <path
-                        d="M1 3.18471C4.34436 3.18471 7.48008 1 10.8705 1C13.2525 1 15.1058 1.72336 17.3165 2.34614C20.3083 3.18891 22.9386 4.09106 26.1351 3.62607C28.8438 3.23203 31.8901 3.01248 34.5396 3.59297C35.6272 3.83127 36.5433 3.92663 37.55 3.29505C38.1957 2.88991 39.4841 3.07684 39.6651 3.87985C39.809 4.51858 43.0217 2.41818 43.6827 2.09236C44.6745 1.60342 45.105 1.98753 46.0216 2.48958C47.7503 3.43649 49.2982 3.62537 51.259 3.19575C51.6076 3.11937 52.011 3.20318 52.3669 3.18471C52.8876 3.1577 53.3662 2.78749 53.8777 2.78749C54.9479 2.78749 55.8858 2.39027 57 2.39027"
-                        stroke="hsl(333deg, 100%, 45%)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
-        </div>
+        <Menu />
         <div className="overflow-hidden absolute block bottom-0 left-0 right-0 w-full">
           <svg
             preserveAspectRatio="none"
             width="1440"
             height="74"
             viewBox="0 0 1440 74"
+            className="w-full"
           >
             <path
               className="fill-white"
@@ -131,10 +34,11 @@ const Layout = ({ pageTitle, children }) => {
           </div>
         </div>
       </div>
-      <main className="w-full max-w-screen-lg mx-auto px-8">
+      <main className="w-full max-w-screen-lg min-h-screen mx-auto px-8">
         <h1 className="main-title">{pageTitle}</h1>
         {children}
       </main>
+      <Footer bgColor='bg-blue-400'></Footer>
     </div>
   );
 };

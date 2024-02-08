@@ -17,7 +17,7 @@ const Category = () => {
     <TitleLayout title="TOP CATEGORIES">
       <div className="pt-4">
         {categories.map((category) => (
-            <Link className="relative inline-block text-sm text-gray-800 py-1 px-3 mr-2 mb-2" to={`/category/${category}`}>
+            <Link key={category} className="relative inline-block text-sm text-gray-800 py-1 px-3 mr-2 mb-2" to={`/category/${category}`}>
               <div className="absolute -z-10 w-full h-full bg-blue-200 rounded-lg inset-0 "></div>{category}
             </Link>
         ))}

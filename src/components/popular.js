@@ -24,7 +24,7 @@ const Popular = () => {
       <div className="-ml-8 pt-8">
         <ul className="mb-8 list-none">
           {data.allMdx.nodes.map((node) => (
-            <li className="mb-4 flex items-start">
+            <li  key={node.id} className="mb-4 flex items-start">
               <span className="flex items-center pr-4 pt-0 text-purple-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
